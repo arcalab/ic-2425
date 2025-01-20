@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Interacção e Concorrência 2023-2024</title>		
+
+	<meta name="description" content="IC 21-22 website">
+	<meta name="keywords" content="Quantum computing, process calculi, Logic">
+	<meta name="author" content="Luís Soares Barbosa" >
+<!-- 	<base href="http://ac1516.proenca.org/" target="_parent" /> -->
+	
+<!-- 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /> -->
+  <link href="extra/css/bootstrap-bw.min.css" rel="stylesheet" media="screen">
+  <link href="extra/css/main.css" rel="stylesheet">
+
+  <!-- see more examples in http://bootswatch.com/paper/# -->
+</head>
+<style>
+p.small {
+  line-height: 1.5;
+}
+
+p.big {
+  line-height: 1.8;
+}
+</style>
+<body>
+
+
+<div class="navbar navbar-default navbar-fixed-top"> <!-- navbar-fixed-top -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">
+<!--     AC -->
+    </a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav" id="myTab">
+      <li class="active"><a href="#">Home</a></li>
+  		<li><a href="#programa">Syllabus</a></li>
+	  	<li><a href="#material">Summaries</a></li>
+      <li><a href="#notas">News</a></li>
+	  	<li><a href="#funcionamento">Pragmatics</a></li>
+    </ul>
+  </div>
+</div>
+
+
+ 
+<div class="splash">
+	<h2 class="splash-title">Interacção e Concorrência 2023-24</h2>
+<!-- 	<div class="blue-rect"> 
+-->
+	<h4 class="splash-subtitle">Licenciatura em Ciências da Computação</h4>
+  <h4 class="splash-subtitle"> Dep. Informática, Universidade do Minho</h4>
+  </div>
+
+
+<div id="myTabContent" class="container">
+<div class="bs-component">
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~
+
+<h2><strong> <font color="red">Aviso: Aulas e avaliação não presencial</font></strong></h2>
+
+<h4> Funcionamento da UC a partir de 16 Março 2020</h4>
+<ul>
+<li> 
+Para cada aula será disponibilizado antecipadamente nesta página o <strong>material de suporte</strong> necessário que deverá ser estudado individualmente por cada um.
+</li>
+<li> 
+No horário previsto para cada aula haverá uma <strong>sessão “live”</strong> que permitirá alguma sincronização à distância onde tentarei apresentar um sumário da matéria e responder às vossas questões. A duração da sessão será ajustada às necessidades de interacção, não excedendo o tempo regulamentar. Utilizaremos para isso a plataforma <strong>Blackboard Collaborate Ultra</strong> disponibilizada pela Universidade. O link para cada sessão estará anunciado nesta página.
+</li>
+<li> 
+Para colmatar as dificuldades de comunicação síncrona (nomeadamente a ausência de um quadro onde escrever), estarei disponível para esclarecer qualquer dúvida de forma assíncrona, por email ou via <strong>Mensagens</strong> na BlackBoard. 
+</li>
+</ul> 
+<h4> Ajuste dos instrumentos de avaliação <font color="red"><strong>NEW</strong></font></h4> 
+<ul>
+  <li> 
+  <strong>Trabalhos práticos</strong> individuais ou em grupo de 2 elementos passam a contar 40% (20% cada) da classificação final.
+</li> 
+<li> 
+  Substituição do teste presencial por uma avaliação individual composta por <strong>teste assíncrono</strong> se necessário complementado por uma <strong>oral</strong> (que incidirá igualmente sobre os trabalhos práticos). 
+</li> 
+<li> 
+  Consultar <strong>nova calendarização abaixo</strong>.
+</li>
+</ul> 
+
+-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>Learning outcomes</h2>
+
+<ul>
+  <li> 
+    To become familiar with <strong>reactive</strong> and <strong>quantum</strong> systems, emphasising the ways they compose and interact.
+  <li> 
+    To master techniques for (formal) specification, analysis and verification of <strong>reactive</strong> and <strong>quantum</strong> systems.
+  <li> 
+    To become  familiar with the use of computational tools supporting the specification and analysis of <strong>reactive</strong> and <strong>quantum</strong> systems. 
+</ul> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="programa"></div>
+<h2>Syllabus</h2>
+<h5> Reactive Systems</h5>
+<ul>
+<li> <strong> Basic models for reactive systems</strong> 
+<ul>
+  <li> Interaction and concurrency.
+  <li> Labelled transition systems.
+  <li> Similarity and bisimilarity.
+ 
+</ul> 
+<li> <strong> Process algebra </strong>
+<ul>
+  <li> Action, process and behaviour.
+  <li> Modelling and analysis of reactive systems in CCS and mCRL2.
+</ul> 
+<li> <strong> Logics for reactive systems</strong>:
+<ul>
+  <li> Hennessy-Milner logic and its extensions.
+  <li> Modal equivalence and bisimilarity.
+  <li> Specification and verification of logic constraints.
+</ul> 
+</ul>
+<h5> Quantum Systems</h5>
+<ul>
+<li> <strong> Fundamentals</strong> 
+<ul>
+  <li> Introduction to quantum information and computation.
+  <li> Mathematical background: Hilbert spaces. The Dirac notation.
+  <li> Quantum states, processes and composition
+  <li> Time-evolution and measurement.
+</ul> 
+<li> <strong> Modelling quantum processes </strong>
+<ul>
+  <li> The circuit model.
+  <li> Quantum gates.
+  <li> Case study: Superdense coding and quantum teleportation.
+</ul> 
+<li> <strong> Introduction to quantum algorithms </strong>
+<ul>
+  <li> The Deutsch-Jozsa and Simon algorithms.
+ <li> Algorithms based on amplitude amplification.
+</ul> 
+<li> <strong> Tool support</strong> - Quantum modelling and programming in Qiskit.
+</ul>
+
+
+<div id="material"></div>
+<h2>Summaries (2023-24)</h2>
+
+<h5> T Lectures</h5>
+  <ul>
+<li>
+  <strong>14 Feb 2024</strong> <a href="slides/IC-LTS.pdf"> [slides]</a>
+  <P> Introduction to  "Interaction and Concurrency" and the course dynamics. 
+ Labelled transition systems. Morphisms between transition systems. Notions of trace, simulation and bisimulation. Bisimilarity. 
+</li> 
+<li>
+  <strong>21 Feb 2024</strong> <a href="slides/IC-PA1.pdf"> [slides]</a>
+  <P> Specification of reactive systems with process algebras. Introduction to CCS: motivation, examples.
+</li>
+<li>
+  <strong>28 Feb 2024</strong></a>
+  <P> CCS process combinators: syntax and operational semantics.
+</li>
+<li>
+  <strong>6 Mar 2024</strong></a>
+  <P> The calculus of (strict) bisimilarity. The expansion theorem. I
+</li>
+<li>
+  <strong>13 Mar 2024</strong></a> <a href="slides/IC-PA2.pdf"> [slides]</a>
+  <P>  Introduction to observational equivalences. How to turn observational equivalence into a congruence? Observational calculi.
+</li>
+<li>
+  <strong>19 Mar 2024 (extra)</strong></a> <a href="slides/IC-HML.pdf"> [slides]</a>
+  <P> Specification of process properties. Brief introduction to modal logic. The Hennessy-Milner logic for processes.  
+</li>
+<li>
+ <strong>20 Mar 2024</strong></a>
+  <P> Describing process properties in the Hennessy-Milner logic. Modal equivalence and its relation with bisimulation.
+</li>
+<li>
+  <strong>3 Abr 2024</strong> <a href="slides/SQ-1-2024.pdf"> [slides]</a>
+  <P>  Introduction to quantum processes: quantum information and quantum computation. </a>
+    From bits to quibits. 
+</li>
+<li>
+  <strong>4 Abr 2024</strong> <a href="slides/SQ-2-2024.pdf"> [slides]</a>
+  <P>   Computing with qubits. My first quantum program: the Deutsch algorithm. 
+</li>
+<li>
+  <strong>10 Abr 2024</strong> <a href="slides/SQ-3-2024.pdf"> [slides 1] </a> <a href="slides/SQ-4-2024.pdf"> [slides 2]</a>
+  <P>   Principles of quantum conputation. 
+   Quantum gates and the curcuit model. 
+<li>
+  <strong>17 Abr 2024</strong> <a href="slides/SQ-5-2024.pdf"> [slides]</a>
+  <P>    The teleportation protocol. Quantum algorithms for unstructured search: Introduction to Grover's algorithm.
+</li>
+<li>
+  <strong>18 Abr 2024</strong> 
+  <P>    Grover's algorithm. A classification of quantum algorithms.
+</li>
+<!--
+<li>
+  <strong>31 Mar 2022</strong></a>
+  <P> Specification of process properties. Brief introduction to modal logic. The Hennessy-Milner logic for processes.  <a href="slides/IC-HML.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>7 Abr 2022</strong></a>
+  <P> Semantics and proof system for the Hennessy-Milner logic.  Bisimulation and modal equivalence. The Hennessy-Milner theorem. Going "temporal": modalities indexd by regular expressions.
+</li>
+<li>
+  <strong>21 Abr 2022</strong> 
+  <P>  Introduction to quantum processes. <a href="slides/IC-Q-1.pdf"> [slides]</a>
+    Notion of a qubit. Computing with qubits. Illustration: the Deutsch algorithm. <a href="slides/IC-Q-2.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>28 Abr 2022</strong> 
+  <P>  The principles of quantum computation: Quantum states and computation. <a href="slides/IC-Q-3.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>5 May 2022</strong> 
+  <P>  Quantum gates and the circuit model. The principles of quantum computation: Compositionality. <a href="slides/IC-Q-3.pdf"> [slides (from the previous lecture)]</a>
+</li>
+<li>
+  <strong>19 May 2022</strong> 
+  <P>  Quantum algorithms. The phase kick-back technique. The Deutsch-Joza algorithm. <a href="slides/IC-Q-4.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>20 May 2022 (at 9-11h)</strong> 
+  <P>  Search problemas and the Grover algorithm. The phase amplification technique. <a href="slides/IC-Q-5.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>26 May 2022</strong> 
+  <P>  Quantum communication protocols: teleportation and superdense conding. <a href="slides/IC-Q-6.pdf"> [slides]</a>
+</li>
+  </ul>
+ 
+
+<li>
+  <strong>26 Abr 2021</strong> 
+  <P>  Computing with qubits illustrated through the Deutsch algorithm. Brief introduction to Hilbert spaces.
+    The principles of quantum computation: The state space postulate <a href="slides/SQ-3-2021.pdf"> [slides (see sections 1 and 2)]</a>.
+</li>
+<li>
+  <strong>3 May 2021</strong> 
+  <P>  
+    Representation of qubits in the Bloch sphere. 
+    The principles of quantum computation: The state evolution,composition and measurement postulates.  <a href="slides/SQ-3-2021.pdf"> [slides (see section 3, 4 and 5)]</a>
+</li>
+<li>
+  <strong>10 May 2021</strong> 
+  <P>  
+    Quantum gates. The circuit model. Two quantum communication protocols: Teleportations and dense coding.  <a href="slides/SQ-4-2021.pdf"> [slides]</a>
+</li>
+<li>
+  <strong>17 May 2021</strong> 
+  <P>  
+    Quantum algorithms. The phase kick-back technique. The Deutsch-Joza algorithm.   <a href="slides/SQ-5-2021.pdf"> [slides]  </a>
+      <P>
+        Search problemas and the Grover algorithms. The phase amplification technique. <a href="slides/SQ-6-2021.pdf"> [slides] </a>
+</li>
+<li>
+  <strong>17 May 2021</strong> 
+  <P>  
+    The basic structure of a quantum algorithms. The phase kick-back tecnique. The Deutsch-Joza algorithm.  <a href="slides/SQ-5-2021.pdf"> [slides]</a>
+</li>
+ --> 
+</ul>
+<P>
+
+<h5> TP Lectures</h5>
+  
+<ul>
+<li>
+  <strong>15 Feb 2024</strong> <a href="slides/ExercLTS0.pdf"> [Exercise Sheet 1]</a> <a href="slides/ExercLTS1.pdf"> [Exercise Sheet 2]</a>
+  <P>  Exercises on labelled transition systems and bisimilarity.
+</li>
+<li>
+  <strong>22 Feb 2024</strong> <a href="slides/ExercAP1.pdf"> [Exercise Sheet 3]</a>
+  <P> Conclusion of the previous lecture. Exercises on process algebra: CCS combinators. 
+</li>
+<li>
+  <strong>29 Feb 2024</strong> 
+  <P> Exercises on process algebra: modelling reactive systems in CCS. 
+</li>
+<li>
+  <strong>7 Mar 2024</strong> <a href="slides/ExercAP2.pdf"> [Exercise Sheet 4]</a>
+  <P> Exercises on process algebra: strict equivalence calculus. 
+   <P> A brief tutorial on modelling processes in mCRL2 
+    <a href="slides/mCRL2-M.pdf"> [slides]</a>,
+    <a href="slides/demo.zip"> [demo]</a>,  <a href="slides/bridge-holes.mcrl2"> [file]</a>, and <a href="slides/TutorialmCRL2.pdf"> [hands-on self tutorial]</a>
+</li>
+<li>
+  <strong>14 Mar 2024</strong> <a href="slides/ExercAP2.pdf"> [Exercise Sheet 4]</a>
+  <P> Exercises on process algebra:  observational equivalence calculi. 
+</li>
+<li>
+  <strong>21 Mar 2024 </strong> 
+  <P> Exercises on process logic  <a href="slides/IC-TP-HML.pdf"> [Exercise Sheet 5]</a>. 
+</li>
+<li>
+  <strong>11 Apr 2024 </strong> 
+  <P> Introduction to quantum computing using Qiskit  <a href="TP/23_24/lecture 1 - Introduction to Quantum Computing using Qiskit/lecture1_introduction.ipynb"> [Jupyter Notebook (updated)]</a> <a href="TP/23_24/lecture 1 - Introduction to Quantum Computing using Qiskit/images.zip"> [images]</a>. 
+</li>
+<li>
+  <strong>24 Apr 2024 </strong> 
+  <P> Multiqubit gates and entanglement <a href="TP/23_24/lecture 1 - Introduction to Quantum Computing using Qiskit/lecture1_introduction.ipynb"> [Jupyter Notebook (updated)]</a> <a href="TP/23_24/lecture 1 - Introduction to Quantum Computing using Qiskit/images.zip"> [images]</a>. 
+</li>
+<li>
+  <strong>2 May 2024 </strong> 
+  <P> Deutsch-josza algorithm  <a href="TP/23_24/Lecture 2 - Deustch algorithm/lecture_2_deutsch.ipynb"> [Jupyter Notebook (updated)]</a> <a href="TP/23_24/Lecture 2 - Deustch algorithm/images.zip"> [images]</a>. 
+</li>
+<li>
+  <strong>8 May 2024 </strong> 
+  <P> Grover's algorithm  <a href="TP/23_24/Lecture 4 - Grover/lecture_4_grover.ipynb"> [Jupyter Notebook]</a> <a href="TP/23_24/Lecture 4 - Grover/images.zip"> [images]</a>. 
+</li>
+<li>
+  <strong>9 May 2024 </strong> 
+  <P> Grover's algorithm with mutiple solutions <a href="TP/23_24/Lecture 4 - Grover/lecture_4_grover_sol.ipynb"> [Jupyter Notebook]</a> <a href="TP/23_24/Lecture 4 - Grover/images.zip"> [images]</a> <a href="TP/23_24/Lecture 4 - Grover/Grovers algorithm theory from class.pdf"> [Grover theory from class]</a>. 
+</li>
+<!--
+<li> 
+  <strong>1 Apr 2022</strong>
+  <P> Exercises on process algebra - observational equivalence and process equality.
+</li>
+ 
+<li>
+  <strong>1 Apr 2022</strong> - Extra class: 14h - 16h (Room A1 at the Informatics Department)
+  <P> Introduction to mCRL2 <a href="slides/mCRL2-M.pdf"> [slides]</a> and
+    <a href="slides/demo.zip"> [demo]</a> 
+</li>
+<li>
+  <strong>8 Abr 2022 </strong> 
+  <P> Exercises on process logic  <a href="slides/IC-TP-HML.pdf"> [Exercise Sheet 5]</a>. 
+</li>
+<li>
+  <strong>22 Abr 2022 </strong> 
+  <P> Introduction to Quantum Computing using Qiskit  <a href="TP/21_22/Lecture 1 - QC introduction/lecture_1_intro.zip"> [Jupyter Notebook]</a>. 
+</li>
+<li>
+  <strong>29 Abr 2022 </strong> 
+  <P> Deutsch's algorithm  <a href="TP/21_22/Lecture 2 - Deutsch/lecture_2.zip"> [Jupyter Notebook]</a>. 
+</li>
+<li>
+  <strong>20 Maio 2022 </strong> 
+  <P> Grover's algorithm  <a href="TP/21_22/Lecture 3 - Grover/Archive.zip"> [Jupyter Notebook]</a>. 
+</li>
+<li>
+  <strong>27 Maio 2022 </strong> 
+  <P> Grover's algorithm <a href="TP/21_22/Lecture 4 - Grover/Archive.zip"> [Jupyter Notebook]</a>. 
+</li>
+</ul>
+
+<li>
+  <strong>2 Mar 2021</strong> 
+  <P> Exercises on bisimilarity (Exercise Sheet 1). 
+</li>
+<li>
+  <strong>16 Mar 2021</strong> </a>
+  <P> Exercises on process algebra (conclusion) 
+</li>
+<li>
+  <strong>23 Mar 2021</strong> <a href="slides/IC-TP-PA2.pdf"> [Exercise Sheet 3]</a>
+  <P> Exercises on observation equivalence in CCS. 
+</li>
+<li>
+  <strong>29 Mar 2021 (extra)</strong> 
+  <P> Demo class in mCRL2 <a href="slides/lamp.mcrl2"> [example]</a> <a href="slides/template.mcrl2"> [template]</a>. 
+</li>
+<li>
+  <strong>13 Abr 2021 (extra)</strong> 
+  <P> Exercises on process logic  <a href="slides/IC-TP-HML.pdf"> [Exercise Sheet 4]</a>. 
+</li>
+<li>
+    <strong>20 Apr 2021</strong>
+  <p>Exercises on the mathematical framework. Intuition for the quantum paradigm. <a href="neri/tp01/ClassLCC1_2021.pdf">[Slides]</a> <a href="neri/tp01/ex1_LCC.pdf">[Exercises]</a></p>
+</li>
+<li>
+    <strong>27 Apr 2021</strong>
+    <p><font color="red">Create an account at <a href="https://quantum-computing.ibm.com/">IBM Q</a> 
+        and install <a href="https://qiskit.org/">Qiskit</a>.</font> <br/>
+        Introduction to Qiskit. <a href="neri/tp02/Class01.ipynb">[Notebook Jupyter]</a>
+    </p>
+</li>
+<li>
+    <strong>04 May 2021</strong>
+    <p>
+        Quantum Information Protocols (Quantum Teleportation and Dense Coding). 
+        Qiskit Aer - Simulation with noise.
+        <a href="neri/tp03/Class02.ipynb">[Notebook Jupyter]</a>
+    </p>
+</li>
+<li>
+    <strong>11 May 2021</strong>
+    <p>
+        Deutsch-Jozsa Algorithm<br />
+        IBM Q Provider
+        <a href="neri/tp04/Class03.ipynb">[Notebook Jupyter]</a>
+    </p>
+</li>
+<li>
+    <strong>18 May 2021</strong>
+    <p>
+        Grover's Algorithm<br />
+        Run in a quantum computer<br />
+        IGNIS<br />
+        <a href="neri/tp05/Class04.ipynb">[Notebook Jupyter]</a>
+    </p>
+</li>
+<li>
+  <strong>24 May 2021</strong>
+  <p>
+    Discussing and clarifying the experimental assignment <br />
+    <strong> <font color="red">Live session</font>: </strong>Join
+    <a href="https://eu.bbcollab.com/guest/494e1bc62d674be998243b2ccd2c00a5"> here! </a>
+  </p>
+</li>
+<li>
+  <strong>01 Jun 2021</strong>
+  <p>
+    Discussing and clarifying the experimental assignment <br />
+    <strong> <font color="red">Live session</font>: </strong>Join
+    <a href="https://eu.bbcollab.com/guest/493daa7278b34017a9de7a7b8028a38d"> here! </a>
+  </p>
+</li>
+</ul>
+
+
+<h2>Summaries (2020-21)</h2>
+
+<h5> T Lectures</h5>
+<ul> 
+
+
+<li>
+  <strong>Feb 4 (T1):</strong> 
+  Introduction to  Interaction and Concurrency and the course dynamics.  <P>
+    Labelled transition systems. Morphisms between trarnsition systems. The relational and coalgebraic perspectives.<P>
+</li>
+<li>
+  <strong>Feb 11 (T2):</strong> 
+  Notions of equivalence between labelled transition systems. Notions of trace, simulation and bisimulation. Bisimilarity.<P>
+</li>
+<li>
+  <strong>Feb 18 (T3):</strong>
+  Introducation to process algebra. Milner's calculus of communicating systems (CCS): motivation, syntax, operational semantics. Examples.  <P>
+</li>
+<li>
+  <strong>Feb 25:</strong> 
+  <em> CARNIVAL </em><P>
+</li>
+<li>
+  <strong>Mar 3 (T4):</strong> 
+  Weak bisimilarity. Observational equivalence and observational congruence. Laws of the weak process calculus. <P>
+</li>
+<li>
+  <strong>Mar 10:</strong> 
+ <em> CANCELLED: Covid-19 preventive determination  </em> <P>
+</li>
+<li>
+  <strong>Mar 17 (T5):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Introduction to mCRL2 as a process modeling tool. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Modelling processes in mCRL2 <a href="slides/IeC-mCRL2-M.pdf"> (slides) </a> <br>
+    <strong>Lecture support:</strong>  Hands-on Lab session <a href="slides/TutorialmCRL2.pdf"> (pdf)</a> 
+      and initial file <a href="slides/bridge-holes.mcrl2"> (mCRL2)</a> 
+
+  <br>
+  <strong> <font color="red">Live session 1</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/2d112d95a6214edcba609c3b48853b36"> here! </a>
+  </p>
+</li>
+<li>
+  <strong>Mar 24 (T6):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Modal logics for processes. The logic of Hennessy-Milner. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Hennessy-Milner Logic <a href="slides/IeC-HML1.pdf"> (slides) </a> 
+  <br>
+  <strong> <font color="red">Live session 3</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/a278cba3ccb24d87b6f9b43efebf43a7"> here! </a>
+  </p>
+</li>
+<li>
+  <strong>Mar 31 (T7):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Modal logics for processes: Examples and exercises. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Hennessy-Milner Logic <a href="slides/ExercHML.pdf">Exercises</a>
+  <br>
+  <strong> <font color="red">Live session 4 (on colibri.zoom.us) </font>: </strong>Join
+  <a href="https://videoconf-colibri.zoom.us/j/972357987"> here! </a>
+  </p>
+</li>
+<li>
+  <strong>Apr 14 (T8):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Expressing temporal properties. Safety and liveness. Introduction to the modal Mu-calculus. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  The modal Mu-calculus <a href="slides/IeC-MuCalc.pdf"> (slides) </a> 
+  <br>
+  <strong> <font color="red">Live session 6</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/bf36f8a1bd16460f999cce2d4c06fe8a"> here! </a>
+  </p>
+</li>
+<li>
+  <strong>Apr 21 (T9):</strong> 
+  <font color="red">(Non presencial lecture)</font>   The modal Mu-calculus: examples and exercises. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Exercise sheet 6 <a href="slides/ExercMUC.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 8</font>: </strong>Join
+  <a href=" https://videoconf-colibri.zoom.us/j/91957330554?pwd=jKAcTt2ZhiVf2X0kjO08XG6T5TQ67A"> here! (zoom)</a>
+  </p>
+</li>
+<li>
+  <strong>Apr 28 (T10):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Quantum data and actions. Introduction to the underlying mathematical framework. Hilbert spaces. Data representation and operators.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  The mathematical framework  <a href="slides/SQ-2.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 10</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/246f77d00dc24d849f7fc6d0fb33678b"> here!</a>
+  </p>
+</li>
+<li>
+  <strong>Mai 5 (T11):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Quantum systems. Postulates:  state space, evolution and composition. Entanglement.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  The principles  <a href="slides/SQ-3.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 12</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/f104b5b8b2be41c1a616b64b21a7897d"> here!</a>
+  </p>
+</li>
+<li>
+  <strong>May 12 (T12):</strong> 
+  <font color="red">(Non presencial lecture)</font>  The measurement postulate. Quantum gates and the circuit model. Application: the teleportation and dense coding protocols.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Quantum gates and the circuit model  <a href="slides/SQ-4.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 14</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/597ba22ddf6c4b388c70311616e2c77f"> here!</a>
+  </p>
+</li>
+<li>
+  <strong>May 19 (T13):</strong> 
+  <font color="red">(Non presencial lecture)</font>  Introduction to quantum algorithms. The algorithms of Deutsch and Deutsch-Josza. Phase kick-back as an algorithmic technique.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Quantum algorithms  <a href="slides/SQ-5.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 16</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/a755d3d92f324c3ea6aff84492471fba"> here!</a>
+  </p>
+</li>
+<li>
+  <strong>May 26 (T14):</strong> 
+ <font color="red">(Non presencial lecture)</font>  Quantum search algorithms: Grover's algorithm. The technique of amplitude amplification. Closing remarks on quantum systems and the IC course.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Quantum search algorithms  <a href="slides/SQ-6.pdf"> (pdf) </a> 
+  <br>
+  <strong> <font color="red">Live session 18</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/4cf0676026104ac6a60464e4931c5767"> here!</a>
+  </p>
+  </li>
+<li>
+  <strong>June 9 (T15):</strong>  
+ Written test <P>
+  </li>
+</ul>
+
+<h5> TP Lectures </h5>
+<ul>
+<li>
+  <strong>Feb 6 (TP1):</strong> 
+  Exercise sheet 1. <P>
+</li>
+<li>
+  <strong>Feb 13 (TP2):</strong> 
+  Exercise sheet 2. <P>
+</li>
+<li>
+  <strong>Feb 20 (TP3):</strong> 
+  Exercise sheet 3. <P>
+</li>
+<li>
+  <strong>Feb 27 (TP4):</strong> 
+  Expositive lecture (given the Carnival pause on the 25th): Process calculus: equational laws; the expansion theorem and its applications. <P>
+</li>
+<li>
+  <strong>Mar 5:</strong> 
+  <em> CANCELLED: Lecturer in UM mission </em> <P>
+</li>
+<li>
+  <strong>Mar 12:</strong> 
+  <em> CANCELLED: Covid-19 preventive determination  </em> <P>
+</li>
+<li>
+  <strong>Mar 19 (TP5):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Exercise sheet 4. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Exercise sheet 4 <a href="slides/ExercAP2.pdf"> (pdf) </a> <br>
+    <strong>Lecture support:</strong>  Exercise 6 (solution)<a href="slides/SolAP2-Ex6.pdf"> (pdf) </a> <br>
+  <strong> <font color="red">Live session 2</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/eb72954228c4454cb9c4854957dbbf6d"> here! </a>
+  </p>
+   <P>
+</li>
+<li>
+  <strong>Mar 26:</strong> 
+  CANCELLED <P>
+</li>
+<li>
+  <strong>Apr 2 (TP6):</strong> 
+  <font color="red">(Non presencial lecture)</font>   Hennessy-Milner logic (conclusion). Exercise sheet 5.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Exercise sheet 5 <a href="slides/ExercHML.pdf"> (pdf) </a> <br>
+  <strong> <font color="red">Live session 5</font>: </strong>Join 
+  <a href="https://videoconf-colibri.zoom.us"> here! </a> (check the meeting id at your academic mailbox)
+  </p>
+   <P> <P>
+</li>
+<li>
+  <strong>Apr 16 (TP7):</strong>
+ <font color="red">(Non presencial lecture)</font>   Modal Mu-calculus: case-studies.  <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Slides from the previous T and 
+  </strong>  Lecture Notes on Process Logic <a href="slides/LicLog.pdf"> (pdf) </a><br>
+  <strong> <font color="red">Live session 7</font>: </strong>Join 
+  <a href="https://eu.bbcollab.com/guest/e9170a33d33f4687803e2b7154bd4430"> here! </a> 
+  </p>
+   <P> <P>
+</li>
+<li>
+  <strong>Apr 23 (TP8):</strong>
+ <font color="red">(Non presencial lecture)</font>   Quantum systems: motivation and introduction. Notion of qubit. Representation in the Bloch sphere. <P>
+  <p class="small">
+    <strong>Lecture support:</strong>  Introduction to quantum systems <a href="slides/SQ-1.pdf"> (slides) </a>
+  <br>
+  <strong> <font color="red">Live session 9</font>: </strong>Join
+  <a href="https://eu.bbcollab.com/guest/e73bb40789ca4d1382551ccdb4b00039"> here! (zoom)</a>
+  </p>
+  <P>
+</li>
+<li>
+  <strong>Apr 30 (TP9):</strong>
+  <font color="red">(Non presencial lecture)</font> Exercises on the mathematical framework. Intuition for the quantum paradigm. <P>
+    <p class="small">
+      <strong>Lecture support:</strong> <a href="neri/ex1_LCC.pdf">Exercises</a> and <a href="neri/ClassLCC1S.pdf">slides with solution</a>
+      <br>
+      <strong><font color="red">Live session 11</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/05740e1aa70c4f3dbb80de12ee1b45e6"> here!</a>
+    </p>
+</li>
+<li>
+  <strong>Mai 7 (TP10):</strong>
+ <font color="red">(Non presencial lecture)</font> Introduction to Qiskit. <P>
+    <p class="small">
+      <strong>Lecture support:</strong> <a href="neri/00_init.ipynb">About Qiskit</a>, <a href="neri/01_first_quantum_program.ipynb">Demo</a>, <a href="neri/02_quantum_gates.ipynb">Exercises</a>
+      <br>
+      <strong><font color="red">Live session 13</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/bca44e3d3cf44ad0b5708a81c13b78f0"> here!</a>
+    </p> <P>
+</li>
+<li>
+  <strong>Mai 14 (TP11):</strong>
+ <font color="red">(Non presencial lecture)</font> Quantum Information Protocols (Quantum Teleportation and Dense Coding). Qiskit Aer - Simulation with noise. <P>
+    <p class="small">
+      <strong>Lecture support:</strong> <a href="neri/03_recall_the_basics.ipynb">Exercises (Basics overview)</a>, <a href="neri/04_advantage_of_quantum_spookiness.ipynb">Teleportation Protocol and Simulation with Noise</a>, <a href="neri/05_dense_coding_exercise.ipynb">Exercises (Dense Coding)</a>
+      <br>
+      <strong><font color="red">Live session 15</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/b0af0714bd774d0eb2ee382e2ad8e7cf"> here!</a>
+    </p> <P>
+</li>
+<li>
+  <strong>Mai 21 (TP12):</strong>
+  <font color="red">(Non presencial lecture)</font> Quantum Algorithms (Deutsch-Jotsza Algorithm). Qiskit Providers - Run in a quantum device. <P>
+    <p class="small">
+      <strong>Lecture support:</strong>  <a href="neri/06_Deutsch-Josza_&_IBMQProvider.ipynb">Tutorial</a>, <a href="neri/07_Deutsch-Josza_&_IBMQProvider_exercise.ipynb">Exercises</a>
+      <br>
+      <strong><font color="red">Live session 17</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/6591034421bf4d709e07fc436cb76ea5"> here!</a>
+    </p>  <P>
+</li>
+<li>
+  <strong>May 28 (TP13):</strong> 
+  <font color="red">(Non presencial lecture)</font> Grover Algorithm. Qiskit Ignis - Noise mitigation <P>
+    <p class="small">
+      <strong>Lecture support:</strong>  <a href="neri/08_unstructured_search_and_error_mittigation.ipynb">Tutorial</a>
+      <br>
+      <strong><font color="red">Live session 19</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/1b87047ab9d74f31b38ce4f9a95dc5b5"> here!</a>
+    </p> <P> 
+</li>
+<li>
+  <strong>June 4: (TP14) </strong> 
+  <font color="red">(Non presencial lecture)</font>  Doubts clarification <P>
+    <p class="small">
+      <strong><font color="red">Live session 20</font>: </strong>Join
+      <a href="https://eu.bbcollab.com/guest/00419d7baa3344fc896ac5e6df788b1a"> here!</a>
+    </p> <P> 
+</li>
+<li>
+  <strong>June 11: (TP15): </strong> 
+  <P>
+</li>
+</ul>
+ -->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~
+<div id="material"></div>
+<h2>Support</h2>
+
+<h5> Slides (2019-20)</h5>
+<ul>
+<li><a href="slides/IeC-LTS1.pdf">
+    Labelled Transition Systems 1</a>
+<li><a href="slides/IeC-LTS2.pdf">
+    Labelled Transition Systems 2</a>
+ <li><a href="slides/IeC-PA1.pdf">
+    Process Algebra 1</a>
+ <li><a href="slides/IeC-PA2.pdf">
+    Process Algebra 2</a>
+  <li><a href="slides/IeC-mCRL2-M.pdf">
+    Modelling processes in mCRL2 </a>
+  <li><a href="slides/IeC-HML1.pdf">
+    Hennessy-Milner Logic <font color="red"></font></a></li>
+   <li><a href="slides/IeC-MuCalc.pdf">
+    The modal Mu-calculus</a></li>
+    <li><a href="slides/LicLog.pdf">
+    Lecture Notes on Process Logic </a></li>
+  <li><a href="slides/SQ-1.pdf">
+    Introduction to quantum systems </a></li>
+   <li><a href="slides/SQ-2.pdf">
+    The mathematical framework </a></li>
+     <li><a href="slides/SQ-3.pdf">
+    The principles of quantum computation 
+     <li><a href="slides/SQ-4.pdf">
+    Quantum gates and the circuit model </a></li>
+     <li><a href="slides/SQ-5.pdf">
+    Quantum algorithms (Deutsch-Josza) </a></li>
+    <li><a href="slides/SQ-6.pdf">
+    Quantum algorithms (Grover) </a></li>
+</ul>
+
+<h5> Practice (Exercises and Jupyter Notebooks) </h5>
+<ul>
+<li><a href="slides/ExercLTS0.pdf">Exercises 1</a></li>
+<li><a href="slides/ExercLTS1.pdf">Exercises 2</a></li> 
+<li><a href="slides/ExercAP1.pdf">Exercises 3</a></li>   
+<li><a href="slides/ExercAP2.pdf">Exercises 4</a></li>
+<li><a href="slides/ExercHML.pdf">Exercises 5</a></li>
+<li><a href="slides/ExercMUC.pdf">Exercises 6 </a></li>
+<li><a href="neri/ex1_LCC.pdf">Exercises 7</a></li>
+<li><a href="neri/ClassLCC1S.pdf">The mathematical framework TP</a></li>
+<li><a href="neri/02_quantum_gates.ipynb">Exercises 8  - Basics (Jupyter Notebook)</a></li>
+<li><a href="neri/00_init.ipynb">About Qiskit (Jupyter Notebook)</a></li>
+<li><a href="neri/01_first_quantum_program.ipynb"> My First Quantum Program (Jupyter Notebook)</a></li>
+<li><a href="neri/03_recall_the_basics.ipynb">Exercises 9 - Basics overview (Jupyter Notebook)</a></li>
+<li><a href="neri/04_advantage_of_quantum_spookiness.ipynb">Teleportation Protocol and Simulation with Noise (Jupyter Notebook)</a></li>
+<li><a href="neri/05_dense_coding_exercise.ipynb"> Exercises 10 - Dense Coding (Jupyter Notebook)</a></li>
+<li><a href="neri/06_Deutsch-Josza_&_IBMQProvider.ipynb">Deutsch-Jotsza Algorithm and Qiskit Providers (Jupyter Notebook)</a></li>
+<li><a href="neri/07_Deutsch-Josza_&_IBMQProvider_exercise.ipynb">Exercises 11 - Deutsch-Jotsza (Jupyter Notebook)</a></li>
+<li><a href="neri/08_unstructured_search_and_error_mittigation.ipynb"> Grover Algorithm and Qiskit Ignis (Jupyter Notebook) </a></li>
+
+<li><a href="slides/ExercHML.pdf">Exercises 5</a></li>
+<li><a href="slides/TutorialmCRL2.pdf">Hands-on mCRL2 Tutorial for individual study</a> + <a href="bridge-holes.mcrl2">bridge-holes.mcrl2</a> </li>
+<li><a href="slides/ExercMUC.pdf">Exercises 6</a></li>
+<li><a href="slides/IC-2018-19.pdf">Pratical Assignment</a></li>
+<li><a href="slides/ExercHML.pdf">Exercises 5</a></li>   
+<li><a href="slides/ExercMUC.pdf">Exercises 6</a></li> 
+ 
+</ul>
+--> 
+
+
+
+
+<!--
+<h5> Lectures (from the 2014-15 edition, in Portuguese) </h5>
+<ul>
+  <li> <a href="Lic/IC-Lic1.pdf">Lição 1 - Sistemas de Transição e Comportamento</a>
+  <li> <a href="Lic/IC-Lic2.pdf">iLição 2 - Modelação de Processos</a>
+  <li> <a href="Lic/IC-Lic3.pdf">Lição 3 - Cálculo de Processos</a>
+  <li> <a href="Lic/IC-Lic4.pdf">Lição 4 - Estudo de Casos</a>
+  <li> <a href="Lic/IC-Lic5.pdf">Lição 5 - Cálculo Pi</a>
+  <li> <a href="Lic/IC-Lic6.pdf">Lição 6 - Lógicas para Processos</a>
+  <li> <a href="Lic/IC-Lic7.pdf">Lição 7 - Estudo de Caso: Um Protocolo de Autenticação</a>
+</ul> 
+--> 
+
+<h2> Bibliography</h2>
+<h5> Classical reactive processes </h5>
+<strong> Basic  </strong><P>
+<ul>
+<li> Luca Aceto, Anna Ingólfsdóttir, Kim G. Larsen, Jiri Srba. <strong>Reactive Systems: Modelling, Specification and Verification</strong>. CUP, 2007. <a href="http://www.cambridge.org/us/academic/subjects/computer-science/programming-languages-and-applied-logic/reactive-systems-modelling-specification-and-verification">
+    [book]</a>
+    <div class="pdf"> <a class="pdf"
+       href="http://www.cs.ioc.ee/yik/schools/win2007/ingolfsdottir/sv-book-part1.pdf">
+    </a></div></li>
+<li> Jan Friso Groote, Mohammad Reza Mousavi. <strong>Modeling and Analysis of Communicating Systems</strong>. MIT Press, 2008.<a href="https://mitpress.mit.edu/index.php?q=books/modeling-and-analysis-communicating-systems">
+  [book]</a>
+   <div class="pdf"> <a class="pdf" href="http://www.win.tue.nl/~jfg/educ/2IW25/herfst2009/mcrl2-book.pdf"></a></div></li>
+</ul>
+<strong> Complementary </strong><P>
+<ul>
+	<li>J. C. M. Baeten, T. Basten, M. A. Reniers. <strong>Process Algebra: Equational Theories of Communicating Processes</strong>. CUP, 2010. </li>
+<li>Robin Milner. <strong>Communicating and Mobile Systems: The Pi Calculus</strong>. CUP, 1999. </li>
+<li>Christel Baier, Joost-Pieter Katoen. <strong>Principles of Model Checking</strong>. MIT Press, 2008 </li>
+</ul>
+
+
+
+<h5>  Quantum processes </h5>
+<strong> Basic  </strong><P>
+<ul>
+<li>N. Yanofsky, M. Mannucci. <strong>Quantum Computing for Computer Scientists</strong>. CUP, 2008.
+<a href="https://www.cambridge.org/core/books/quantum-computing-for-computer-scientists/8AEA723BEE5CC9F5C03FDD4BA850C711">[book]</a></li>
+ <li> E. Rieffel and W. Polak. <strong>Quantum Computing: A Gentle Introduction</strong>. MIT Press, 2011. 
+ 	<a href="https://mitpress.mit.edu/books/quantum-computing">[book]</a>
+<div class="pdf"> <a class="pdf" href="http://mmrc.amss.cas.cn/tlb/201702/W020170224608150244118.pdf"></a></div></li>
+ </li>
+</ul>
+<strong> Complementary </strong><P>
+<ul>
+<li> M. A. Nielsen and I. L. Chuang. <strong>Quantum Computation and Quantum Information</strong> (10th
+Anniversary Edition). Cambridge University Press, 2010. </li>
+<li> S. Aaronson. <strong>Quantum Computing since Democritus</strong>. Cambridge
+University Press, 2013.</li>
+</ul>
+
+
+
+
+
+<h5> Links </h5>
+<ul>
+<li><a href="http://www.mcrl2.org">mCRL2 website</a></li>
+<li><a href="https://qiskit.org/">Qiskit website</a></li>
+<li><a href="http://arca.di.uminho.pt">Arca website</a></li>
+</ul>
+
+<!--
+<div id="notas"></div>
+<h2>News</h2>
+
+<h5> Assignments </h5>
+<ul>
+<li><strong><font color="red">FINAL MARKS</font></strong> <a href="IC-AClass2021.pdf">[pdf]</a> 
+</li>
+<li>Problem set 1 (23 Mar to 20 Apr) <a href="slides/IC-P1-2021.pdf">[Questions]</a> <a href="slides/TutorialmCRL2M.pdf">[mCRL2 tutorial]</a> <a href="slides/bridge-holes.mcrl2">[mCRL2 sample file]</a>
+</li>
+<li>Problem set 2 (19 Apr to 10 May) <a href="slides/IC-P2-2021.pdf">[Questions]</a> <a href="slides/IC-P2-2021.tex">[LaTeX source file]</a>
+</li>
+<li> Quantum Pratical Assignment <a href="neri/project_LCC_2021.pdf">[TP project]</a> <br />
+  <strong><font color="red"> DEADLINE : 6 June 2021 </font></strong> <br />
+  <a href="neri/grupos.pdf"> Groups </a> <br />
+  <strong><font color="red"> Discussion: 9 June 2021 - <a href="neri/gruposh.pdf">schedule</a> </font></strong> <br />
+  <strong><font color="red"> <a href="https://eu.bbcollab.com/guest/48a7c0bf99a548c28b30e6c9185e95cf">Link here</a></font></strong>
+</li> 
+</ul>
+
+<!--
+<h5><a name="May24"></a> <strong>May 24:</strong> <font color="red"> Some references for the quantum systems module</font><font color="red">    <strong>NEW</strong></font></h5>
+
+<ul>
+<li> <a href="https://arxiv.org/abs/1708.03684">Introductory text</a>  on quantum computation, covering essentially the topics discussed in the lectures, although sometimes with a different focus and notation.
+
+<li> <a href="https://arxiv.org/abs/1804.03719">Quantum algorithms implementations for beginners</a> a recent, systematic survey paper, a bit terse, but with implementation schemes in <a href="https://qiskit.org/">Qiskit</a>.
+
+<li> <a href="https://arxiv.org/abs/1801.00862">John Preskill 2017</a> paper on current NISQ technology --- very important reading to complement the stuff covered in the lectures.
+</ul>
+
+<h5><a name="Mar16"></a> <strong>Mar 16:</strong> <font color="red">Going virtual (from 16th March ...)</font> </h5>
+
+<ul>
+<li> 
+Para cada aula será disponibilizado antecipadamente nesta página o <strong>material de suporte</strong> necessário que deverá ser estudado individualmente por cada um.
+</li>
+<li> 
+No horário previsto para cada aula haverá uma <strong>sessão “live”</strong> que permitirá alguma sincronização à distância onde tentarei apresentar um sumário da matéria e responder às vossas questões. A duração da sessão será ajustada às necessidades de interacção, não excedendo o tempo regulamentar. Utilizaremos para isso a plataforma <strong>Blackboard Collaborate Ultra</strong> disponibilizada pela Universidade. O link para cada sessão estará anunciado nesta página.
+</li>
+<li> 
+Para colmatar as dificuldades de comunicação síncrona (nomeadamente a ausência de um quadro onde escrever), estarei disponível para esclarecer qualquer dúvida de forma assíncrona. 
+</li>
+<li> 
+<strong>Ajuste dos instrumentos de avaliação</strong> 
+<ul>
+  <li> 
+  <strong>Trabalhos práticos</strong> individuais ou em grupo de 2 elementos passam a contar 40% (20% cada) da classificação final.
+</li> 
+<li> 
+  Substituição do teste presencial por uma avaliação individual composta por <strong>teste assíncrono</strong> se necessário complementado por uma <strong>oral</strong> (que incidirá igualmente sobre os trabalhos práticos). 
+</li> 
+<li> 
+  Consultar <strong>nova calendarização abaixo</strong>.
+</li>
+</ul>
+</li>
+</ul> 
+-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="funcionamento"></div>
+<h2>Pragmatics</h2>
+
+
+<h5><a name="Docente"></a> Lecturers </h5>
+<ul>
+<li>Coordinator: <a href="http://www.di.uminho.pt/~lsb">Luís Soares Barbosa</a> </li>
+<li>Teaching Assistant: <a href="https://pt.linkedin.com/in/andr%C3%A9-sequeira-89a265132">André Sequeira</a> </li>
+</ul>
+
+
+<h5><a name="Avaliação"></a> Assessment </h5>
+
+<ul>
+  <li> Individual test (70%):  <strong><font color="red">20 May, 9h, Room Ed. 1 - 2.07 </font></strong>
+  During the test students may access any notes, or other printed or handwritten material. The use of a laptop, tablet or smart phone will not be allowed. <P>
+  <li> Practical assignment (30%) in the form of 4 individual exercises along the semester.
+    <ul>
+      <li> Problems <strong><font color="red">1 </font></strong> and <strong><font color="red">2 </font></strong> (on reactive systems) to be completed until <strong><font color="red">April, 22 </font></strong> 
+        <a class="pdf" href="./IC-E-ReactiveSys-2324.pdf">(pdf)</a>
+      <li> Exercises on Quantum Computing to be completed until <strong><font color="red">May, 31 </font></strong> 
+        <a class="pdf" href="./exCQ2324.pdf">[pdf]</a>
+    </ul>
+</ul>
+
+<h5><a name="Avaliação"></a> Grading </h5>
+
+<ul>
+  <li> Individual test (20 May) <a class="pdf" href="./IC2324Teste-Classf.pdf">(marks)</a>. <P>
+  Marks equal or above 7 can be averaged with the marks of the practical assignment.  All other cases require attempting the exam.   <P> 
+  <li> Final Marks (T + TP) (8 June) <a class="pdf" href="./IC2324CLASSF.pdf">(marks)</a>. <P>
+  Students whose final mark is in the interval [7.5,8.5[ can improve their T mark in the exam or make a global oral exam (please email the lecturer if choosing the later option.)   <P>
+  <li> Final Marks (Exam + TP) (17 June) <a class="pdf" href="./IC2324FINAL.pdf">(marks)</a>. <P>
+  Students whose final mark is in the interval [7.5,8.5[ are entitled to a global oral exam to tak eplace Friday, 21 June, at 17h (please email the lecturer if interested.)   <P>
+  <li> Final Marks (Special Term Exam + TP) (13 July) <a class="pdf" href="./IC2324FINAL-ESPECIAL.pdf">(marks)</a>. <P>
+                                                                                           
+</ul>
+
+<!-- 
+  <a href="slides/IeC2´122TesteSol.pdf"> (Test with resolution hints)</a> 
+   <li> Exam(70%):  <strong><font color="red">21 June (16.30h), room 0.04 (Edifício 1) </font></strong>
+  During the test students may access any notes, or other printed or handwritten material. The use of a laptop, tablet or smart phone will not be allowed. 
+  <li> Training assignment (on quantum processes) (30%): 
+<a href="TP/21_22/concurrency_project_2022.pdf">[Final project]</a> <br />
+    <strong><font color="red"> DEADLINE : 24 June 2022 </font></strong> <br />
+    The oral discussion will be on <strong>27 June, all day starting at 9am</strong> <br />
+    <strong><font color="red"> GROUPS & DISCUSSION TIMES  </font></strong> <a href="https://uminho365-my.sharepoint.com/:x:/g/personal/d12955_uminho_pt/ESYkikuy-klLkzb96ogI6HoBuJT12w1o5YyIXYhDJ5FSrg?e=hNovbF"> here </a> (Login with the email from the university) <br />
+  <li> mCRL2 Tutorial <a href="slides/TutorialmCRL2M.pdf"> (pdf)</a> 
+      and initial file <a href="slides/bridge-holes.mcrl2"> (mCRL2)</a>  
+  </li> 
+</ul>
+<a href="QC-Teste1819.pdf">Results!</a>
+</li>
+<li> FINAL MARKS available <a href="CQ-ClassifFinais.pdf">HERE!</a>
+</li>
+-->
+
+<!--
+  Results available <a href="IC1819-Teste.pdf">here!</a>
+</li>
+<li> FINAL MARKS available <a href="IC1819-FINAL.pdf">here!</a>
+</li>
+<li> FINAL MARKS (after Época Especial) available <a href="IC1819-Especial.pdf">here!</a>
+</li>
+</ul>
+
+
+<h5><a name="Enunciado Provas"></a> Provas </h5>
+
+<ul>
+  <li> <a href="TP1-IC2017-18.zip">TP1 - DEADLINE: 13.04.2018 </a>
+  <li> <a href="TP2-IC2017-18.pdf">TP2 - DEADLINE: 28.05.2018 </a>
+</ul>
+~-->
+</ul>
+<h5><a name="Contact"></a> Contact </h5>
+
+
+<ul>
+  <li> Lectures: T - Wed, 11-13 (Building 1  - Room 1.17)| TP - Thu 11-13 (Building 1 - Room 1.27)
+  <li> Appointments: Wed, 18:00-20:00 and Thu, 18:00-20:00 (please send an email the day before) 
+  <li> Email: lsb arroba di ponto uminho ponto pt
+  <li> Last update: 2024.07.13
+</ul>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~-->
+</div> <!-- bs-component -->
+</div> <!-- container -->
+
+<!-- FOOTERS -->
+
+<div class="panel-footer" id="wrapper-footer">
+<div id="footer">
+2024.07.13
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="extra/js/bootstrap.min.js"></script>
+<!-- <script src="../assets/js/bootswatch.js"></script> -->
+
+<script>
+
+  $(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
+    }
+  });
+  
+  // post-process the tweeter feed.
+  (function ($) {
+    window.setTimeout(function(){
+      $(".twitter-timeline").contents().find(".e-entry-title").attr("style", "color: #666666; font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;");
+    }, 1000);
+
+  })(jQuery);
+
+</script>
+
+</body>
+</html>
+

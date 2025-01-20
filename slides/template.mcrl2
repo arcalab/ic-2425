@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA STRUCTURES and DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% sort ...											% data specification 
+
+
+% cons ...											% constructors for defined sorts (define the set of elements)
+
+
+% map ...											% mappings (function signatures over elements of some type)
+
+
+% var ... 											% variables used for pattern matching in eqn
+
+
+% eqn ... 											% equations (can define how a function "behave")
+
+
+% glob ... 											% global declarations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACTIONS (declarations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% act ... 											% actions of the model and their signature
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROCESSES (declarations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% proc ...											% process definitions 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SYSTEM DEFINITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% init  p 					% how the system starts
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUICK REFERENCE (basic data types, processes, multi-actions, operations)
+
+% data types: 
+% Int, Nat, Bool (true,false), Pos (positive numbers), Real, List,...
+
+
+% multi-action: 
+% a:= tau, nome, nome(parameter data), a|a 
+
+
+% process:
+% p:= a, delta, p + p, p . p, 	% basic operators
+% 	  p || p, 					% parallel composition 
+%	  P(paremeter data) = p, 	% process definition
+
+
+% extra operators:
+% 	  c -> p <> p, c -> p  		% conditionals (if then else, if then)
+%	  sum d:D . p 		 		% summation (potential infinite choices among data values in D) 
+
+
+% Restrictions (finer control over processes) 
+
+% comm(a|a -> nome,p) 		% communication restrictions (data parameters must coincide)
+% allow({a},p) 				% allow multi-actions besides tau (data parameters can differ)
+% block({a},p)				% block an action from ocurring (renames transitions to delta, disregards data parameters)
+% rename({a->a},p)			% rename actions (disregards data parameters, maitains parmeters)
+% hide({a},p)				% hide actions (disregards data parameters)
+
+% com < allow < hide (recommended order)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

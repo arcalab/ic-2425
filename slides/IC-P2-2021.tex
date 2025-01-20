@@ -1,0 +1,136 @@
+% !TEX encoding = IsoLatin
+\documentclass[titlepage,12pt]{article}
+     
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{a4wide}
+
+\def\rtrano#1{\stackrel{#1}{\Longrightarrow}} 
+\def\rtran#1{\stackrel{#1}{\longrightarrow}}
+\def\tran#1{\stackrel{#1}{\longrightarrow}}
+\def\PP{\mathbf{P}}
+\def\scong{\equiv}
+\def\naobs{\mathbin{\not \approx}} 
+\def\fuc#1{#1}
+\def\ev{\Diamond}
+\def\dimp{\mathbin{\Leftrightarrow}}
+\def\imp{\mathbin{\Rightarrow}}
+\def\rimp{\mathbin{\Leftarrow}}
+\def\limp{\mathbin{\multimap}}
+\def\e{\mathbin{\wedge}}
+\def\ou{\mathbin{\vee}}
+\def\abv{\stackrel{\rm abv}{=}}    
+\def\universal#1#2{\forall_{#1}\;.\; #2}
+\def\existential#1#2{\exists_{#1}\;.\; #2}
+\def\true{\fuc{true}}
+\def\false{\fuc{false}}
+\def\pv#1#2{\langle #1 \rangle #2}
+\def\nc#1#2{[#1]#2}
+\def\pvo#1#2{\langle \! \! \! \langle #1 \rangle \! \! \! \rangle\, #2}
+\def\nco#1#2{\llbracket #1 \rrbracket #2}
+\def\cvg#1{\llbracket \downarrow \rrbracket #1}
+\def\cvgr#1#2{\llbracket #1 \downarrow \rrbracket #2}
+\def\cvgl#1#2{\llbracket \downarrow  #1 \rrbracket #2}
+\def\cvglr#1#2{\llbracket \downarrow  #1 \downarrow \rrbracket #2}
+\def\lfp#1#2{\mu {#1}\, .\, {#2}}
+\def\lpf#1#2{\mu {#1}\, .\, {#2}}
+\def\gfp#1#2{\nu {#1}\, .\, {#2}}
+\def\gpf#1#2{\nu {#1}\, .\, {#2}}
+\def\mset#1{\vvv #1 \vvv}
+\def\vvv{\vert \! \vert}
+\def\mnc#1{\vvv [#1] \vvv}
+\def\mpv#1{\vvv \langle #1 \rangle \vvv}
+\def\bcomp#1{#1^{\text{c}}}
+\def\setdef#1#2{\{#1\; |\;#2\}}             % { f(x) | p(x) }
+\def\enset#1{\mathopen{ \{ }#1\mathclose{ \} }} % {a,b,...z}
+\def\st{. \; }                           % "such that"
+
+
+\begin{document}
+\hline
+\begin{center}
+\textbf{Interaction and Concurrency}~\\ ~\\
+\textbf{Problem Set - 2 } \\
+19 April 2021 - 3 May 2021\\
+~\\
+\end{center}
+
+
+\hline
+
+\vspace{1.5cm}
+
+\emph{ Please provide a complete, individual answer and quote suitably any reference used.}
+\vspace{1cm}
+
+The modal connectives  introduced in the lectures explore the structure of
+transitions in $ \PP $, i.e. binary relations $\tran{x} \subseteq \PP \times \PP$, for $ x \in Act$,
+ relating the validity of the formulas to sets of
+states reached through certain transitions.
+
+It is possible, however,  to define other transition relations in $\PP$
+that are computationally relevant.
+One of them is \emph {observable transitions} 
+$ \rtrano{a} \; \subseteq \; \PP \times \PP $, labelled from  $ L = (Act - \enset{\tau})  \cup \enset{\epsilon}$.
+Remember that a $ \rtrano{\epsilon}$-transition corresponds to zero or more transitions through an
+unobservable action  $\tau$.
+
+Consider two new modal operators
+that express, respectively, the \emph{possibility}
+and the \emph{need} for a property to be valid
+after performing an arbitrary amount of unobservable behaviour.
+
+\begin{align*}
+E  \models \pvo{~}{\phi} & \text{~~~~~~ iff ~~~}
+\existential{F \in \setdef{E'}{E \rtrano{\epsilon} E'}}{F \models \phi} \\
+E  \models \nco{~}{\phi} & \text{~~~~~~ iff ~~~}
+\universal{F \in \setdef{E'}{E \rtrano{\epsilon} E'}}{F \models \phi} 
+\end{align*}
+
+By abbreviation we can now define the ``observable versions '' of
+$\pv{K}{~}$ e $\nc{K}{~}$, for $K \subseteq L$.  Thus,
+\begin{align*}
+\pvo{K}{\phi} \abv\; &  \pvo{~}{~} \pv{K}{~}\pvo{~}{\phi} \\
+\nco{K}{\phi} \abv\; &  \nco{~}{~} \nc{K}{~}\nco{~}{\phi} 
+\end{align*}
+
+Another relevant operator is defined by 
+
+\begin{equation*}
+E\:  \models\: \cvg{\phi} \text{~~~~~~ iff ~~~} E \downarrow\: \e\:
+\universal{F \in \setdef{E'}{E \rtrano{\epsilon} E'}}{F \models \phi}
+\end{equation*}
+
+\noindent
+where $E \downarrow$ means that process $E$ is \emph{convergent}, i.e. it does not commit to an infinite loop of 
+internal actions ($\tau$).
+
+
+\begin{enumerate}
+\item
+Explain in your own words the meaning of the three new logical operators just introduced. For each of them specify a property resorting to it and describes in your own words its intended meaning.
+\item
+Explain the meaning of formulas $\pvo{abac}{\true}$ and $\nco{-}{\false}$. Illustrate their use through the specification of four different, non-bisimilar processes such that $\pvo{abac}{\true}$ holds in two of them and $\nco{-}{\false}$ in the other two.
+\item
+In the logic you have studied in the lectures, formula
+$$
+\pv{-}{\true} \e \nc{-a}{\false}
+$$
+expresses \emph{inevitability}, i.e. the occurrence of action $a$ is inevitable.
+Which of the  formulas
+\begin{enumerate}
+\item  $\pvo{-}{\true} \e \nco{-a}{\false}$  
+\item $\nco{~}{~} \pvo{-}{\true} \e \nco{-a}{\false}$
+\end{enumerate}
+if any, would express a similar property in the observational setting? 
+Justify your answer. If none seems suitable, provide an alternative specification.
+
+\item
+In the lectures, you have studied a close relationship between \emph{bisimilarity} and \emph{modal equivalence} for the logic then introduced.
+Discuss in some detail if and how a similar result holds relating \emph{observational equivalence} and \emph{modal equivalence} 
+for the extended logic.
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,104 @@
+% Modelar uma lâmpada:
+%	- a lâmpada tem três posições: off, low, e bright
+%	- um usuário pode interagir com a lâmpada pressionando um botão
+%	- cada vez que o botão é pressionado, a lâmpada muda de posição
+%	- a ordem é a seguinte: `off`, `low`, `bright`, `off`,..., com a seguinte exceção:
+%	- se está em low e o úsuario pressiona o botão menos de 5 seg, fica em `bright`
+%	- se está em low e o úsuario pressiona o botão mais de 5 seg, fica em `off`
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA STRUCTURES and DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% sort ...											% data specification 
+sort StLamp = struct off | low | bright;
+	 Duration = struct ltFive | geqFive; 
+
+% cons ...											% constructors for defined sorts (define the set of elements)
+%cons 
+%	off,low,bright:StLamp;
+
+% map ...											% mappings (function signatures over elements of some type)
+map 
+	next:StLamp # Duration -> StLamp;
+
+% var ... 											% variables used for pattern matching in eqn
+var 
+	s:StLamp; 
+	d:Duration; 
+
+% eqn ... 											% equations (can define how a function "behave")
+eqn 
+	(s == low && d == ltFive) -> next(s,d) = bright; 
+	(s == low && d == geqFive) -> next(s,d) = off;
+	next(off,d) = low; 
+	next(bright,d) = off; 
+
+% glob ... 											% global declarations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACTIONS (declarations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% act ... 											% actions of the model and their signature
+act pressiona, mudar,press:Duration;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROCESSES (declarations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% proc ...											% process definitions 
+proc 
+
+	User = sum d:Duration . pressiona(d) . User;
+
+	Lamp(st:StLamp) = sum d:Duration . mudar(d) . Lamp(next(st,d));
+		
+		
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SYSTEM DEFINITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% init  p 					% how the system starts
+init allow({press}, 
+		comm({mudar|pressiona -> press}, User || Lamp(off)));
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUICK REFERENCE (basic data types, processes, multi-actions, operations)
+
+% data types: 
+% Int, Nat, Bool (true,false), Pos (positive numbers), Real, List,...
+
+
+% multi-action: 
+% a:= tau, nome, nome(parameter data), a|a 
+
+
+% process:
+% p:= a, delta, p + p, p . p, 	% basic operators
+% 	  p || p, 					% parallel composition 
+%	  P(paremeter data) = p, 	% process definition
+
+
+% extra operators:
+% 	  c -> p <> p, c -> p  		% conditionals (if then else, if then)
+%	  sum d:D . p 		 		% summation (potential infinite choices among data values in D) 
+
+
+% Restrictions (finer control over processes) 
+
+% comm(a|a -> nome,p) 		% communication restrictions (data parameters must coincide)
+% allow({a},p) 				% allow multi-actions besides tau (data parameters can differ)
+% block({a},p)				% block an action from ocurring (renames transitions to delta, disregards data parameters)
+% rename({a->a},p)			% rename actions (disregards data parameters, maitains parmeters)
+% hide({a},p)				% hide actions (disregards data parameters)
+
+% comm < allow < hide (recommended order)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
